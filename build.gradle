@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'antlr'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    antlr 'org.antlr:antlr4:4.12.0'
+}
+
+generateGrammarSource {
+    arguments += ["-visitor", "-long-messages", '-no-listener']
+}
